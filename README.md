@@ -1,6 +1,6 @@
 # docsify-plugin-carbon
 
-A plugin to make you easy to join up [Carbon](https://www.carbonads.net/)
+A plugin to make you easy to add [Carbon Ads](https://www.carbonads.net/) to docsify.
 
 # Usage
 
@@ -17,9 +17,9 @@ window.$docsify = {
 }
 ```
 
-# Sample
+# Example
 
-[xmake.io](https://xmake.io/#/getting_started)
+See example site: [xmake.io](https://xmake.io/#/getting_started)
 
 ![](https://cdn.jsdelivr.net/gh/waruqi/docsify-plugin-carbon@master/sample.png)
 
