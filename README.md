@@ -2,6 +2,8 @@
 
 A plugin to make you easy to add [Carbon Ads](https://www.carbonads.net/) to docsify.
 
+![npm](https://img.shields.io/npm/dy/docsify-plugin-carbon?style=flat-square)
+
 # Usage
 
 ```
