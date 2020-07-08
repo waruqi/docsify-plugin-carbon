@@ -5,7 +5,7 @@ A plugin to make you easy to join up [Carbon](https://www.carbonads.net/)
 # Usage
 
 ```
-<script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1.0.0/index.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1.0.1/index.min.js"></script>
 ```
 
 ```
