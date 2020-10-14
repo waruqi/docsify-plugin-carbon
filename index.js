@@ -20,14 +20,15 @@
           window.DocsifyCarbon.scriptEl.remove()
         }
 
-        var script = document.createElement('script')
-        script.src="https://cdn.carbonads.com/carbon.js?serve=" + CarbonId + "&placement=" + CarbonPlacement
-        script.async = "async"
-        script.id = "_carbonads_js"
-        window.DocsifyCarbon.scriptEl = script
-        
         var nav = document.getElementsByClassName('sidebar-nav');
-        nav[0].insertBefore(script, nav[0].firstChild);
+        if (nav && nav[0]) {
+          var script = document.createElement('script')
+          script.src="https://cdn.carbonads.com/carbon.js?serve=" + CarbonId + "&placement=" + CarbonPlacement
+          script.async = "async"
+          script.id = "_carbonads_js"
+          window.DocsifyCarbon.scriptEl = script
+          nav[0].insertBefore(script, nav[0].firstChild);
+        }
       }
     },
 
