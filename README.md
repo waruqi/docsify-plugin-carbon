@@ -25,4 +25,15 @@ See example site: [xmake.io](https://xmake.io/#/getting_started)
 
 ![](https://cdn.jsdelivr.net/gh/waruqi/docsify-plugin-carbon@master/sample.png)
 
+# Contributing
 
+(Requires [`node.js`](https://nodejs.dev) for minification)
+
+1. Fork this repo
+2. Modify `index.js`
+3. Run the following command from your terminal / CLI:
+
+   ```shell
+   npx terser index.js -o index.min.js
+   ```
+4. Create a [pull request](https://github.com/waruqi/docsify-plugin-carbon/pulls) on GitHub
