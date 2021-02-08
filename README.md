@@ -7,7 +7,7 @@ A plugin to make you easy to add [Carbon Ads](https://www.carbonads.net/) to doc
 # Usage
 
 ```
-<script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1.0.2/index.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1.0.3/index.min.js"></script>
 ```
 
 ```
