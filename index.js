@@ -17,7 +17,7 @@
       if (document.getElementById("carbonads") === null) {
 
         if (window.DocsifyCarbon.scriptEl) {
-          window.DocsifyCarbon.scriptEl.remove()
+          window.DocsifyCarbon.scriptEl.parentNode.removeChild(window.DocsifyCarbon.scriptEl)
         }
 
         var nav = document.getElementsByClassName('sidebar-nav');
