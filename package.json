@@ -1,6 +1,6 @@
 {
   "name": "docsify-plugin-carbon",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A plugin to make you easy to join up Carbon",
   "main": "index.js",
   "scripts": {

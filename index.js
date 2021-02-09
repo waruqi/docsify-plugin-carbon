@@ -16,8 +16,13 @@
     injectCarbonScript: function(CarbonId, CarbonPlacement) {
       if (document.getElementById("carbonads") === null) {
 
-        if (window.DocsifyCarbon.scriptEl) {
-          window.DocsifyCarbon.scriptEl.parentNode.removeChild(window.DocsifyCarbon.scriptEl)
+        var scriptEl = window.DocsifyCarbon.scriptEl
+        if (scriptEl) {
+          if (scriptEl.parentNode && scriptEl.parentNode.removeChild) {
+            scriptEl.parentNode.removeChild(scriptEl)
+          } else if (scriptEl.remove) {
+            scriptEl.remove()
+          }
         }
 
         var nav = document.getElementsByClassName('sidebar-nav');
