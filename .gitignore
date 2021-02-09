@@ -1,2 +1,3 @@
 *.png
+.cache
 .DS_Store
