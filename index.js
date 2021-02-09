@@ -1,123 +1,115 @@
-;(function(window) {
+(function(window) {
   window.DocsifyCarbon = {
-    scriptEl: null,
-    create: function(CarbonId, CarbonPlacement) {
+    create(CarbonId, CarbonPlacement) {
       return function(hook, vm) {
         hook.ready(function() {
           window.DocsifyCarbon.injectCarbonStyle();
-        })
+        });
 
-        hook.doneEach(function () {
+        hook.doneEach(function() {
           window.DocsifyCarbon.injectCarbonScript(CarbonId, CarbonPlacement);
-        })
-      }
+        });
+      };
     },
 
-    injectCarbonScript: function(CarbonId, CarbonPlacement) {
-      if (document.getElementById("carbonads") === null) {
+    injectCarbonScript(CarbonId, CarbonPlacement) {
+      const adEl = document.querySelector("#carbonads");
+      const scriptID = "_carbonads_js";
+      const sidebarEl = document.querySelector(".sidebar-nav");
 
-        var scriptEl = window.DocsifyCarbon.scriptEl
+      if (!adEl && sidebarEl) {
+        let scriptEl = document.querySelector(`#${scriptID}`);
+
         if (scriptEl) {
-          if (scriptEl.parentNode && scriptEl.parentNode.removeChild) {
-            scriptEl.parentNode.removeChild(scriptEl)
-          } else if (scriptEl.remove) {
-            scriptEl.remove()
-          }
+          scriptEl = scriptEl.parentNode.removeChild(scriptEl);
+        }
+        else {
+          scriptEl = document.createElement("script");
+          scriptEl.src = `https://cdn.carbonads.com/carbon.js?serve=${CarbonId}&placement=${CarbonPlacement}`;
+          scriptEl.async = "async";
+          scriptEl.id = scriptID;
         }
 
-        var nav = document.getElementsByClassName('sidebar-nav');
-        if (nav && nav[0]) {
-          var script = document.createElement('script')
-          script.src="https://cdn.carbonads.com/carbon.js?serve=" + CarbonId + "&placement=" + CarbonPlacement
-          script.async = "async"
-          script.id = "_carbonads_js"
-          window.DocsifyCarbon.scriptEl = script
-          nav[0].insertBefore(script, nav[0].firstChild);
-        }
+        sidebarEl.insertBefore(scriptEl, sidebarEl.firstChild);
       }
     },
 
-    injectCarbonStyle: function() {
-      var style = document.createElement('style');
-      var css = `
-      #carbonads {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+    injectCarbonStyle() {
+      const style = document.createElement("style");
 
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-        Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        width: 300px;
-        height: 250px;
-        text-align: center;
-        background-color: #fff;
-        box-shadow: inset 0 0 1px 1px hsla(0, 0%, 0%, .15);
-      }
+      style.textContent = `
+        #carbonads {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
 
-      #carbonads a {
-        text-decoration: none;
-        color: #111;
-      }
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+          Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          width: 300px;
+          height: 250px;
+          text-align: center;
+          background-color: #fff;
+          box-shadow: inset 0 0 1px 1px hsla(0, 0%, 0%, .15);
+        }
 
-      #carbonads a:hover {
-        color: #111;
-      }
+        #carbonads a {
+          text-decoration: none;
+          color: #111;
+        }
 
-      #carbonads span {
-        display: block;
+        #carbonads a:hover {
+          color: #111;
+        }
 
-        overflow: hidden;
-      }
+        #carbonads span {
+          display: block;
 
-      .carbon-img {
-        display: block;
-        margin: 0 0 8px;
+          overflow: hidden;
+        }
 
-        line-height: 1;
-      }
+        .carbon-img {
+          display: block;
+          margin: 0 0 8px;
 
-      .carbon-img img {
-        width: 150px;
-        max-width: 150px !important;
-        height: auto;
-      }
+          line-height: 1;
+        }
 
-      .carbon-text {
-        display: block;
-        margin-bottom: 8px;
-        padding: 0 10px;
+        .carbon-img img {
+          width: 150px;
+          max-width: 150px !important;
+          height: auto;
+        }
 
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.35;
-      }
+        .carbon-text {
+          display: block;
+          margin-bottom: 8px;
+          padding: 0 10px;
 
-      .carbon-poweredby {
-        display: block;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        padding: 8px 6px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.35;
+        }
 
-        font-size: 8px;
-        font-weight: 600;
-        line-height: 1;
-        letter-spacing: .5px;
-        text-transform: uppercase;
-        color: #fff !important;
-        background-color: hsl(246, 93%, 69%);
-      }`;
+        .carbon-poweredby {
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 8px 6px;
 
-      style.type = 'text/css';
-      if (style.styleSheet){
-        style.styleSheet.cssText = css;
-      } else {
-        style.appendChild(document.createTextNode(css));
-      }
+          font-size: 8px;
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: .5px;
+          text-transform: uppercase;
+          color: #fff !important;
+          background-color: hsl(246, 93%, 69%);
+        }
+      `;
+
       document.head.appendChild(style);
-    }
-
-  }
-})(window)
+    },
+  };
+})(window);
