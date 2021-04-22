@@ -1,19 +1,21 @@
 # docsify-plugin-carbon
 
-A plugin to make you easy to add [Carbon Ads](https://www.carbonads.net/) to docsify.
-
 ![npm](https://img.shields.io/npm/dy/docsify-plugin-carbon?style=flat-square)
+
+A [docsify](https://docsify.js.org/) plugin that displays [Carbon Ads](https://www.carbonads.net/).
 
 # Usage
 
-```
+
+
+```html
 <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1/index.min.js"></script>
 ```
 
-```
+```javascript
 window.$docsify = {
   plugins: [
-    // change to your Carbon property id
+    // Change to your Carbon property ID
     DocsifyCarbon.create('CE7I52QU', 'xmakeio')
   ]
 }
@@ -29,10 +31,10 @@ See example site: [xmake.io](https://xmake.io/#/getting_started)
 
 1. Fork this repo
 2. Modify `index.js`
-3. Run the following CLI command (requires [`node.js`](https://nodejs.dev)):
+3. Run the following CLI command:
 
    ```shell
-   npx parcel build index.js --out-dir ./ --out-file index.min.js --experimental-scope-hoisting
+   npm run build
    ```
 
 4. Create a [pull request](https://github.com/waruqi/docsify-plugin-carbon/pulls) on GitHub
