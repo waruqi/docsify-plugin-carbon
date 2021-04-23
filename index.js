@@ -35,9 +35,9 @@
     },
 
     injectCarbonStyle() {
-      const style = document.createElement("style");
+      const styleEl = document.createElement("style");
 
-      style.textContent = `
+      styleEl.textContent = `
         #carbonads * {
           margin: initial;
           padding: initial;
@@ -111,7 +111,7 @@
         }
       `;
 
-      document.head.appendChild(style);
+      document.head.insertBefore(styleEl, document.querySelector("head style, head link[rel*='stylesheet']"));
     },
   };
 })(window);
