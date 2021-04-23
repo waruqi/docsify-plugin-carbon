@@ -44,17 +44,11 @@
         }
 
         #carbonads {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-            Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial,
-            sans-serif;
-        }
-
-        #carbonads {
-          display: flex;
           max-width: 330px;
-          background-color: hsl(0, 0%, 98%);
-          box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, 0.1);
-          z-index: 100;
+          background-color: #fafafa;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+            sans-serif;
         }
 
         #carbonads a {
@@ -67,8 +61,8 @@
         }
 
         #carbonads span {
-          position: relative;
           display: block;
+          position: relative;
           overflow: hidden;
         }
 
@@ -76,38 +70,33 @@
           display: flex;
         }
 
-        #carbonads .carbon-img {
-          display: block;
-          margin: 0;
-          line-height: 1;
-        }
-
         #carbonads .carbon-img img {
           display: block;
         }
 
         #carbonads .carbon-text {
-          font-size: 13px;
-          padding: 10px;
-          margin-bottom: 16px;
+          align-self: center;
+          margin-bottom: 20px;
+          padding: 8px 10px;
+          font-size: 12px;
           line-height: 1.5;
           text-align: left;
         }
 
         #carbonads .carbon-poweredby {
           display: block;
-          padding: 6px 8px;
-          background: #f1f1f2;
-          text-align: center;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          font-weight: 600;
-          font-size: 8px;
-          line-height: 1;
-          border-top-left-radius: 3px;
           position: absolute;
           bottom: 0;
           right: 0;
+          padding: 6px 8px;
+          border-top-left-radius: 3px;
+          background-color: #f1f1f1;
+          font-size: 8px;
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: 0.5px;
+          text-align: center;
+          text-transform: uppercase;
         }
       `;
 
