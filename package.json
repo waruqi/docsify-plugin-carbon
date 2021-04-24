@@ -2,21 +2,29 @@
   "name": "docsify-plugin-carbon",
   "version": "1.0.6",
   "description": "A plugin to make you easy to join up Carbon",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "ruki",
+  "license": "ISC",
+  "homepage": "https://github.com/waruqi/docsify-plugin-carbon#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/waruqi/docsify-plugin-carbon.git"
   },
-  "keywords": [
-    "carbon", "docsify", "plugin", "xmake"
-  ],
-  "author": "ruki",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/waruqi/docsify-plugin-carbon/issues"
   },
-  "homepage": "https://github.com/waruqi/docsify-plugin-carbon#readme"
+  "keywords": [
+    "carbon",
+    "docsify",
+    "plugin",
+    "xmake"
+  ],
+  "main": "index.js",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "scripts": {
+    "build": "parcel build index.js --out-dir ./ --out-file index.min.js --experimental-scope-hoisting",
+    "start": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
